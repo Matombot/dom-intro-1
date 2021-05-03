@@ -6,8 +6,8 @@ const radioBillAddBtn = document.querySelector(".radioBillAddBtn")
 const totalCost2Elem = document.querySelector(".totalTwo")
 const callsTotal2Elem = document.querySelector(".callTotalTwo");
 const smsTotal2Elem = document.querySelector(".smsTotalTwo")
-var callsTotal = 0;
-var smsTotal = 0;
+var callsTotal2 = 0;
+var smsTotal2 = 0;
 //add an event listener for when the add button is pressed
 radioBillAddBtn.addEventListener("click",radioBillTotal)
 //in the event listener get the value from the billItemTypeRadio radio buttons
@@ -24,15 +24,15 @@ if (checkedRadioBtn){
 }
     // update the correct total
     if (billItemType === "call"){
-        callsTotal += 2.75
+        callsTotal2 += 2.75
     }
     else if (billItemType === "sms"){
-        smsTotal += 0.75;
+        smsTotal2 += 0.75;
     }
     //update the totals that is displayed on the screen.
-    callsTotal2Elem.innerHTML = callsTotal.toFixed(2);
-    smsTotal2Elem.innerHTML = smsTotal.toFixed(2);
-    var totalCost2 = callsTotal + smsTotal;
+    callsTotal2Elem.innerHTML = callsTotal2.toFixed(2);
+    smsTotal2Elem.innerHTML = smsTotal2.toFixed(2);
+    var totalCost2 = callsTotal2 + smsTotal2;
     totalCost2Elem.innerHTML = totalCost2.toFixed(2);
 
     //color the total based on the criteria
