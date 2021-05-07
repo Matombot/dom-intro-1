@@ -1,5 +1,5 @@
 // get a reference to the sms or call radio buttons
-const billItemType = document.querySelector(".billItemTypeRadio")
+const billItemTypeRadio = document.querySelector(".billItemTypeRadio")
 //get a reference to the add button
 const radioBillAddBtn = document.querySelector(".radioBillAddBtn")
 //create a variable that will keep track of the total bill
