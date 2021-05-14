@@ -31,6 +31,8 @@ settingBillAddBtn.addEventListener("click", settingsBill)
 // * display the latest total on the screen.
 // * check the value thresholds and display the total value in the right color.
 function settingsBill() {
+    totalSettingsElem.classList.remove("warning")
+    totalSettingsElem.classList.remove("danger")
     var clickRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked")
     if (clickRadioBtn) {
         var settingsItemTypes = clickRadioBtn.value;
@@ -54,11 +56,22 @@ function settingsBill() {
         // adding the warning class will make the text orange
         totalSettingsElem.classList.add("danger");
     }
+
 }
 function updateSetting() {
+    totalSettingsElem.classList.remove("warning")
+    totalSettingsElem.classList.remove("danger")
     //Calls costs should now be configurable using the settings section.
     callCostSetting = Number(callCostElement.value);
     smsCostSetting = Number(smsCostElement.value);
     warningLevelSetting = Number(warningElement.value);
     criticalLevelSetting = Number(criticalElement.value);
+    if (totalSettings >= warningLevelSetting){
+        // adding the warning class will make the text orange
+        totalSettingsElem.classList.add("warning");
+    }
+    if (totalSettings >=criticalLevelSetting ){
+        // adding the warning class will make the text orange
+        totalSettingsElem.classList.add("danger");
+    }
 }
